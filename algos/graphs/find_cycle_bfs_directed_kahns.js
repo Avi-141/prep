@@ -13,7 +13,7 @@ const buildGraphFromEdges = (edges) => {
 }
 
 
-// indegree count (incoming edghes for each node)
+// indegree count (incoming edges for each node)
 const bfs = (graph, totalNodes, indegree) => {
     const queue = []
     for(let i=0;i<totalNodes;i++){

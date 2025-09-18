@@ -1,5 +1,5 @@
 import java.util.*;
-public class bbq_easy {
+public class A_BBQ_Easy {
   public static void main (String args[]){
     Scanner Sc = new Scanner(System.in);
     int N;

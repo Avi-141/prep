@@ -20,7 +20,7 @@ function bfs(graph, node, visited){
     queue.push({node, parent: -1});
     visited[node] = true
     while(queue.length > 0){
-        const curr = queue.shift();
+        const curr = queue.shift(); // use pointers head and tail instead of shift.
         for(const neighbor of graph[curr.node]){
             if(visited[neighbor] && neighbor !== curr.parent) {
                 cycleStart = neighbor;

@@ -93,7 +93,7 @@ class TreeNode {
     }
 }
 
-// 10. HEAP/PRIORITY QUEUE (Manual implementation needed)
+// 10. HEAP/PRIORITY QUEUE
 class MinHeap {
     constructor() {
         this.heap = [];

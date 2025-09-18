@@ -12,8 +12,6 @@ const buildGraph = (edges) => {
     return graph;
 }
 
-// ...existing code...
-
 const dfs = (graph, node, visited, recStack, parent, depth = 0) =>{
     const indent = '  '.repeat(depth);
     console.log(`${indent}→ Entering node ${node}`);

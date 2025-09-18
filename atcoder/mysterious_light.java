@@ -1,8 +1,3 @@
-
-/**
- *
- * @author avi-141
- */
 import java.util.*;
 public class mysterious_light {
     public static long gcd(long a, long b) {
