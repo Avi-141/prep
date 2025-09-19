@@ -18,9 +18,13 @@ map.delete('key');
 
 // 4. SETS - Built-in
 const set = new Set();
-set.add(1);
-set.has(1);
-set.delete(1);
+
+// 5. PRIORITY QUEUE (HEAP)
+
+// Usage:
+// const pq = new MinHeap(); // Min heap
+// const maxPq = new MinHeap((a, b) => b - a); // Max heap  
+// const dijkstraPq = new MinHeap((a, b) => a.dist - b.dist); // Custom objects
 
 // 5. STACK - Use Array
 class Stack {
@@ -32,29 +36,6 @@ class Stack {
     peek() { return this.items[this.items.length - 1]; }
     isEmpty() { return this.items.length === 0; }
 }
-
-// 6. QUEUE - Use Array or Deque
-class Queue {
-    constructor() {
-        this.items = [];
-    }
-    enqueue(item) { this.items.push(item); }
-    dequeue() { return this.items.shift(); }
-    front() { return this.items[0]; }
-    isEmpty() { return this.items.length === 0; }
-}
-
-// 7. DEQUE (Double-ended queue)
-class Deque {
-    constructor() {
-        this.items = [];
-    }
-    addFront(item) { this.items.unshift(item); }
-    addRear(item) { this.items.push(item); }
-    removeFront() { return this.items.shift(); }
-    removeRear() { return this.items.pop(); }
-}
-
 // 8. LINKED LIST
 class ListNode {
     constructor(val, next = null) {
@@ -92,61 +73,6 @@ class TreeNode {
         this.right = right;
     }
 }
-
-// 10. HEAP/PRIORITY QUEUE
-class MinHeap {
-    constructor() {
-        this.heap = [];
-    }
-    
-    getParentIndex(i) { return Math.floor((i - 1) / 2); }
-    getLeftChildIndex(i) { return 2 * i + 1; }
-    getRightChildIndex(i) { return 2 * i + 2; }
-    
-    insert(val) {
-        this.heap.push(val);
-        this.heapifyUp();
-    }
-    
-    extractMin() {
-        if (this.heap.length === 0) return null;
-        if (this.heap.length === 1) return this.heap.pop();
-        
-        const min = this.heap[0];
-        this.heap[0] = this.heap.pop();
-        this.heapifyDown();
-        return min;
-    }
-    
-    heapifyUp() {
-        let index = this.heap.length - 1;
-        while (index > 0) {
-            const parentIndex = this.getParentIndex(index);
-            if (this.heap[parentIndex] <= this.heap[index]) break;
-            [this.heap[parentIndex], this.heap[index]] = [this.heap[index], this.heap[parentIndex]];
-            index = parentIndex;
-        }
-    }
-    
-    heapifyDown() {
-        let index = 0;
-        while (this.getLeftChildIndex(index) < this.heap.length) {
-            const leftChildIndex = this.getLeftChildIndex(index);
-            const rightChildIndex = this.getRightChildIndex(index);
-            
-            let smallestIndex = leftChildIndex;
-            if (rightChildIndex < this.heap.length && 
-                this.heap[rightChildIndex] < this.heap[leftChildIndex]) {
-                smallestIndex = rightChildIndex;
-            }
-            
-            if (this.heap[index] <= this.heap[smallestIndex]) break;
-            [this.heap[index], this.heap[smallestIndex]] = [this.heap[smallestIndex], this.heap[index]];
-            index = smallestIndex;
-        }
-    }
-}
-
 // 11. TRIE (Prefix Tree)
 class TrieNode {
     constructor() {
@@ -260,7 +186,7 @@ Advanced (30% of hard problems):
 
 SegmentTree, Fenwick Tree
 Deque for sliding window problems
-Pro tip: Master the first 9 data structures thoroughly before moving to advanced ones!
+Master the first 9 data structures thoroughly before moving to advanced ones!
 */
 
 // 3. Array methods you MUST know:

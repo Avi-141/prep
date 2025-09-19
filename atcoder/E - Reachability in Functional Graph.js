@@ -102,6 +102,17 @@ for (let i = 1; i <= N; i++) {
 }
 */
 
+/*const { makeIntQueue } = require('./queue');
+
+const q = makeIntQueue(N);
+for (let i = 1; i <= N; i++) if (indeg[i] === 0) q.push(i);
+while (!q.empty()) {
+  const u = q.pop();
+  const v = to[u];
+  if (--indeg[v] === 0) q.push(v);
+}
+*/
+
 function solve(){
     const fs = require('fs');
     const input = fs.readFileSync('/dev/stdin', 'utf8').trim().split('\n');
