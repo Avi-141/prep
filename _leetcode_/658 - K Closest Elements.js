@@ -9,8 +9,7 @@
 // We search for the start index 'left' in [0..n-k] such that the k-length window is closest to x.
 // In that comparison, prefer writing:
 //    x - arr[mid] > arr[mid + k] - x
-// instead of using absolute values:
-//    Math.abs(x - arr[mid]) > Math.abs(arr[mid + k] - x)
+// instead of using absolute values: Math.abs(x - arr[mid]) > Math.abs(arr[mid + k] - x)
 // This non-absolute form handles edge cases where arr[mid] == arr[mid+1] (or sequences of identical numbers),
 // ensuring ties move the left bound correctly and maintain the required ordering.
 
