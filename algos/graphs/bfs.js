@@ -15,7 +15,8 @@ const bfs = (graph, start, visited = new Set()) => {
     visited.add(start)
 
     while(queue.length > 0){
-        const node = queue.shift() // dequeue remove from front
+        const node = queue.shift() // dequeue remove from front 
+        // use pointers instead..
         console.log(node);
         for(const neighbor of graph[node]){
             if(!visited.has(neighbor)){

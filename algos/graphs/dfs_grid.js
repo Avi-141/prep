@@ -21,5 +21,4 @@ const dfsGrid= (grid, row, col, visited = new Set())=>{
     }
 }
 
-
 dfsGrid(exampleGrid,1,1)
