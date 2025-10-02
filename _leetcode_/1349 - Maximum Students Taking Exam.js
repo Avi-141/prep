@@ -9,13 +9,19 @@ https://leetcode.com/problems/maximum-students-taking-exam/solutions/1460292/Pyt
 https://leetcode.com/problems/maximum-students-taking-exam/solutions/2475512/ford-fulkerson-max-flow-max-matching-min-mpg8/
 https://leetcode.com/problems/maximum-students-taking-exam/solutions/503790/python-hungarian-time-om2n2-space-omn-be-uhlp/
 
+https://algo.monster/liteproblems/1349
+
 https://youtu.be/Sal6kHewGcM
 minimum vertex cover = maximum matching and how to find it. 
+
 If we have the min vertex cover and remove all such vertices from our graph, then by definition there should be no edge remaining in the leftover graph, i.e. we can select all remaining vertices. 
 Now our answer should be max(n + m - v, v) but as v cannot be greater than min(n, m). 
 Our answer becomes n + m - v
 =============
-TLE Code
+
+
+
+TLE Code as i bruted through all subsets.
 
 I modelled it as a max independent set problem
 But it turnde out that in worse case we can have 2^v subsets where v is set of all good seats
