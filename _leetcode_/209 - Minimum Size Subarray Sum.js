@@ -25,6 +25,9 @@ var minSubArrayLen = function(target, nums) {
 };
 
 
+// Binary search on prefix sums
+// note that arary has + elements only so no issue
+// if negative then tricky
 var minSubArrayLen = function(target, nums) {
     const N = nums.length;
     const pref = new Array(N + 1).fill(0);
