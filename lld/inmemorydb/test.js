@@ -43,3 +43,27 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 }
 
 export { testAll };
+
+// Quick backup/restore smoke test
+import { BackupRestore } from './level4.js';
+
+function testBackupRestore() {
+    console.log('\n=== Testing Level 4 - Backup/Restore ===');
+    const db = new BackupRestore();
+    db.set_with_ttl(1000, 'u1', 'a', 1, 100); // expires at 1100
+    db.set(1001, 'u1', 'b', 2); // infinite
+    const snapCount = db.backup(1050);
+    console.log('Backup count:', snapCount); // should be 1
+
+    // mutate after backup
+    db.set_with_ttl(1060, 'u1', 'c', 3, 10); // expires at 1070
+    db.cleanAllExpired(1080);
+    console.log('Before restore scan:', db.scan(1080, 'u1'));
+
+    db.restore(1050);
+    console.log('After restore scan:', db.scan(1080, 'u1'));
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+    testBackupRestore();
+}
