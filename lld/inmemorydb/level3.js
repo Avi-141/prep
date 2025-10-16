@@ -107,7 +107,7 @@ export class TTL extends Filter{
         if (!this.ttlData.has(key)) {
             this.ttlData.set(key, new Map());
         }
-        this.add_ttl_info(timestamp, key, field, value, ttl)
+        this.add_ttl_info(timestamp, key, field, new_value, ttl)
         return true;
     }
 

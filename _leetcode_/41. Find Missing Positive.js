@@ -23,7 +23,8 @@ function firstMissingPositive(nums) {
         if(nums[i] < 0) nums[i] = 0
     }
     // [3,4,-1,1] = [3,4,0,1]
-    // indices = [2,3,0] so 1 indice which should contain value 2 is missing.
+    // [-3, -4, 0, -1]
+    // therefore 2 is missing
     for (let i = 0; i < nums.length; i++) {
         let index = Math.abs(nums[i]) - 1; 
         // Numbers greater than n or less than 1 are irrelevant (can't be the answer)

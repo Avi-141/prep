@@ -65,6 +65,7 @@ vector<int> findClosestElements(vector<int>& arr, int k, int x) {
     return result;
 }
 
-// So here i found closest element to X in sorted array using binary search. Then the search space will be left and right of that index for K elements
+// So here i found closest element to X in sorted array using binary search. 
+// Then the search space will be left and right of that index for K elements
 
 
