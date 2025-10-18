@@ -9,11 +9,6 @@ class TrieNode {
         this.wordCount = 0; // Number of times this exact word was inserted (for duplicate handling)
     }
 }
-
-/**
- * Comprehensive Trie Data Structure
- * Supports all common operations needed for algorithmic problems
- */
 class Trie {
     constructor() {
         this.root = new TrieNode();
