@@ -1,1 +1,0 @@
-// https://www.greatfrontend.com/questions/javascript/backbone-model
